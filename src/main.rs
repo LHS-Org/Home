@@ -1,44 +1,26 @@
 use yew::prelude::*;
 
-enum Msg {
-    AddOne,
-}
+pub struct Home;
 
-struct Model {
-    value: i64,
-}
-
-impl Component for Model {
-    type Message = Msg;
+impl Component for Home {
+    type Message = ();
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self { value: 0 }
+        Self
     }
 
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg {
-            Msg::AddOne => {
-                self.value += 1;
-                // the value has changed so we need to
-                // re-render for it to appear on the page
-                true
-            }
-        }
-    }
-
-    fn view(&self, ctx: &Context<Self>) -> Html {
-        // This gives us a component's "`Scope`" which allows us to send messages, etc to the component.
-        let link = ctx.link();
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <div>
-                <button onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
-                <p>{ self.value }</p>
+            <div id="welcome">
+                <h1>{"Loek Sangers"}</h1>
+                <p>{"Feel free to contact me on "}<a href="https://www.linkedin.com/in/loeksangers/">{"LinkedIn"}</a>{" or see what I have been up to lately on "}<a href="https://github.com/LoekSangers">{"GitHub"}</a>{"."}</p>
+                <p>{"If you were expecting an introduction, those places are also where you need to be ;)."}</p>
             </div>
         }
     }
 }
 
 fn main() {
-    yew::start_app::<Model>();
+    yew::start_app::<Home>();
 }
