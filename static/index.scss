@@ -1,0 +1,26 @@
+:root {
+	color-scheme: light dark;
+  
+	--body-bg:#fff;
+	--body-color:#222;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+	:root {
+	  --body-bg:#121212;
+	  --body-color:#eee;
+	}
+  }
+  
+  body {
+	background: var(--body-bg);
+	color: var(--body-color);
+  }
+  
+  #welcome {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	margin-top: 60px;
+  }
