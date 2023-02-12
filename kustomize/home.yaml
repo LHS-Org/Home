@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: home
-        image: ghcr.io/LHS-Org/Home:main
+        image: ghcr.io/lhs-org/home:main
         imagePullPolicy: Always
         ports:
         - containerPort: 80
