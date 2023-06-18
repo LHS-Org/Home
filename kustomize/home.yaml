@@ -72,4 +72,4 @@ spec:
     - hosts:
         - loeksangers.nl
         - www.loeksangers.nl
-      secretName: loeksangers.nl-tls
+      secretName: loeksangers.nl-prod-tls
