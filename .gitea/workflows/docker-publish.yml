@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   Build-and-Publish:
-    runs-on: ubuntu-latest
+    runs-on: Self-hosted
     steps:
       - run: echo "🔎 The name of your branch is ${{ gitea.ref }} and your repository is ${{ gitea.repository }}."
       - name: Check out repository code
@@ -15,9 +15,9 @@ jobs:
         # https://github.com/docker/setup-qemu-action
         name: Set up QEMU
         uses: https://github.com/docker/setup-qemu-action@v2
-      - 
-      #   name: Setup Docker buildx
-      #   uses: docker/setup-buildx-action@v2
+      -
+        name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v2
       # - run: echo "Build finished."
 # name: Build and push container
 # run-name: Build and push container
