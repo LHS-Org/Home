@@ -13,11 +13,11 @@ jobs:
       -
         # Add support for more platforms with QEMU (optional)
         # https://github.com/docker/setup-qemu-action
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v2
-      - run: echo "Build finished."
+      #   name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v2
+      # - name: Setup Docker buildx
+      #   uses: docker/setup-buildx-action@v2
+      # - run: echo "Build finished."
 # name: Build and push container
 # run-name: Build and push container
 # on:
