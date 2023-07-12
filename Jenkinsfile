@@ -16,8 +16,8 @@ pipeline {
             steps {
                 container(name: 'kaniko', shell: '/busybox/sh') {
                     sh '''#!/busybox/sh
-                        ls /kaniko/.docker
-                        cp /kaniko/.docker/.dockerconfjson /kaniko/.docker/config.json
+                        
+                        cp /kaniko/.docker/.dockerconfigjson /kaniko/.docker/config.json
                         cat /kaniko/.docker/config.json
                         /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination gitea.loeksangers.nl/${IMAGE_NAME}:latest
                     '''
