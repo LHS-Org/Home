@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        IMAGE_NAME = "LHS-Home/Home"
+        IMAGE_NAME = "lhs-home/home"
     }
 
     stages {        
@@ -17,7 +17,7 @@ pipeline {
                 container(name: 'kaniko', shell: '/busybox/sh') {
                     sh '''#!/busybox/sh
                         cat /kaniko/.docker/config.json
-                        /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination ${IMAGE_NAME}:latest
+                        /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination gitea.loeksangers.nl/${IMAGE_NAME}:latest
                     '''
                 }
             }
