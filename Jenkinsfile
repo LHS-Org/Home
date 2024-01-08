@@ -17,7 +17,7 @@ pipeline {
                 container(name: 'kaniko', shell: '/busybox/sh') {
                     sh '''#!/busybox/sh
                     
-                        /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination gitea.loeksangers.nl/${IMAGE_NAME}:latest
+                        /kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination gitea.loeksangers.nl/${IMAGE_NAME}:latest --cache=true
                     '''
                 }
             }
